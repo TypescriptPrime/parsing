@@ -1,0 +1,46 @@
+{
+  "name": "@typescriptprime/bump-packagejson-version",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "build:esbuild": "esbuild sources/index.ts --bundle --format=esm --splitting --sourcemap --target=es2024 --external:/node_modules --outdir=dist",
+    "build:tsc": "tsc sources/index.ts --outDir dist/types --declaration --emitDeclarationOnly",
+    "build": "npm run build:esbuild && npm run build:tsc",
+    "lint": "eslint . --ext .ts",
+    "test": "ava"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/**/*",
+    "LICENSE",
+    "README.md"
+  ],
+  "ava": {
+    "files": [
+      "tests/**/*.test.ts"
+    ],
+    "extensions": [
+      "ts"
+    ],
+    "nodeArguments": [
+      "--import=tsx"
+    ],
+    "workerThreads": false
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
+  "devDependencies": {
+    "@types/node": "^24.9.2",
+    "ava": "^6.4.1",
+    "eslint": "^9.38.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.2"
+  }
+}
