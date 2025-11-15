@@ -1,7 +1,7 @@
 import test from 'ava'
 import { Parsing } from '@/index.js'
 
-test('throws error for spanning across tokens without close at emd (inner is double quote)', T => {
+test('throws error for spanning across tokens without close at end (inner is double quote)', T => {
   let Input = ['--parameter1', '"value', 'is', 'wrong']
   T.throws(() => {
     Parsing(Input)
