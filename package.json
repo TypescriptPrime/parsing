@@ -24,13 +24,16 @@
     "files": [
       "tests/**/*.test.ts"
     ],
-    "extensions": [
-      "ts"
-    ],
     "nodeArguments": [
       "--import=tsx"
     ],
-    "workerThreads": false
+    "workerThreads": false,
+    "typescript": {
+      "rewritePaths": {
+        "@/": "./sources/"
+      },
+      "compile": false
+    }
   },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -40,6 +43,7 @@
     "url": "git+https://github.com/TypescriptPrime/parsing.git"
   },
   "devDependencies": {
+    "@ava/typescript": "^6.0.0",
     "@types/node": "^24.10.1",
     "ava": "^6.4.1",
     "eslint": "^9.39.1",
