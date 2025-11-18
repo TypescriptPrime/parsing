@@ -1,5 +1,5 @@
 {
-  "name": "@typescriptprime/bump-packagejson-version",
+  "name": "@typescriptprime/parsing",
   "type": "module",
   "version": "1.0.0",
   "scripts": {
@@ -35,6 +35,10 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TypescriptPrime/parsing.git"
+  },
   "devDependencies": {
     "@types/node": "^24.10.1",
     "ava": "^6.4.1",
