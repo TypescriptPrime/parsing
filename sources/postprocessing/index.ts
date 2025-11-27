@@ -12,7 +12,7 @@ import type { JSONValue, IParsingOptions } from '../types.js'
 export async function PostProcessing<I extends JSONValue>(Args: string[], FuncOptions: IParsingOptions = {
   NamingConvention: ESToolkit.pascalCase
 }): Promise<{ Options: I, Positional: string[] }> {
-  const Options: Record<string, boolean | string> = {}
+  const Options: Record<string, boolean | string> = Object.create(null)
   const Positional: string[] = []
 
   for (let I = 0; I < Args.length; I++) {
