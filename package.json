@@ -3,7 +3,12 @@
   "type": "module",
   "version": "0.0.0",
   "description": "Lightweight helper utilities for parsing CLI-style arguments, implemented in TypeScript",
-  "keywords": ["cli", "helper", "utilities", "ci"],
+  "keywords": [
+    "cli",
+    "helper",
+    "utilities",
+    "ci"
+  ],
   "scripts": {
     "build:esbuild": "esbuild sources/index.ts --bundle --format=esm --splitting --sourcemap --target=es2024 --external:/node_modules --outdir=dist",
     "build:tsc": "tsc sources/index.ts --outDir dist/types --declaration --emitDeclarationOnly",
@@ -49,6 +54,7 @@
     "@ava/typescript": "^6.0.0",
     "@types/node": "^24.10.1",
     "ava": "^6.4.1",
+    "esbuild": "^0.27.0",
     "eslint": "^9.39.1",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",
