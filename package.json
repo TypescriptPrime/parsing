@@ -10,9 +10,7 @@
     "ci"
   ],
   "scripts": {
-    "build:esbuild": "esbuild sources/index.ts --bundle --format=esm --splitting --sourcemap --target=es2024 --external:/node_modules --outdir=dist",
-    "build:tsc": "tsc sources/index.ts --outDir dist/types --declaration --emitDeclarationOnly",
-    "build": "npm run build:esbuild && npm run build:tsc",
+    "build": "tsc -p sources/tsconfig.json",
     "lint": "eslint . --ext .ts",
     "test": "ava"
   },
@@ -52,15 +50,14 @@
   },
   "devDependencies": {
     "@ava/typescript": "^6.0.0",
-    "@types/node": "^24.10.2",
+    "@types/node": "^24.10.9",
     "ava": "^6.4.1",
-    "esbuild": "^0.27.1",
-    "eslint": "^9.39.1",
+    "eslint": "^9.39.2",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.49.0"
+    "typescript-eslint": "^8.54.0"
   },
   "dependencies": {
-    "es-toolkit": "^1.42.0"
+    "es-toolkit": "^1.44.0"
   }
 }

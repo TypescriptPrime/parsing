@@ -100,14 +100,11 @@ const { Options } = await PostProcessing(Tokens)
 
 ## Scripts
 
-- `npm run build` — runs: `esbuild` to bundle the compiled JS and TypeScript compiler to emit declarations.
+- `npm run build` — runs: `tsc -p sources/tsconfig.json` to bundle the compiled JS and emit declarations.
 - `npm test` — runs AVA tests.
 - `npm run lint` — runs ESLint checks.
 
-This project is published as an ES module. If you are developing locally, the following commands are useful:
-
-- `npm run build:esbuild` — bundle with esbuild (JS output)
-- `npm run build:tsc` — emit TypeScript declarations only
+This project is published as an ES module.
 
 The package `exports` are configured in `package.json` so importing the default entry works with ESM loaders.
 
