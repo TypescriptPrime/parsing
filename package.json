@@ -50,16 +50,16 @@
   },
   "devDependencies": {
     "@ava/typescript": "^6.0.0",
-    "@types/node": "^24.10.9",
-    "@typescript-eslint/eslint-plugin": "^8.56.0",
-    "@typescript-eslint/parser": "^8.56.0",
-    "ava": "^6.4.1",
-    "eslint": "^9.39.2",
+    "@types/node": "^24.11.0",
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "ava": "^7.0.0",
+    "eslint": "^10.0.2",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.54.0"
+    "typescript-eslint": "^8.56.1"
   },
   "dependencies": {
-    "es-toolkit": "^1.44.0"
+    "es-toolkit": "^1.45.0"
   }
 }
