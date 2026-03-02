@@ -9,7 +9,7 @@ import type { JSONValue, IParsingOptions } from '../types.js'
  * @param FuncOptions - Configuration for post-processing behavior, such as the naming convention transformer.
  * @returns A promise resolving to an object containing the parsed options and remaining positional arguments.
  */
-export async function PostProcessing<I extends JSONValue>(Args: string[], FuncOptions: IParsingOptions = {
+export async function ParseArgumentsAndOptions<I extends JSONValue>(Args: string[], FuncOptions: IParsingOptions = {
   NamingConvention: ESToolkit.pascalCase
 }): Promise<{ Options: I, Positional: string[] }> {
   const Options: Record<string, boolean | string> = Object.create(null)

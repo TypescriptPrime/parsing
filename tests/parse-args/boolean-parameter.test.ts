@@ -1,5 +1,5 @@
 import test from 'ava'
-import { PostProcessing } from '@/index.js'
+import { ParseArgumentsAndOptions } from '@/index.js'
 
 test('boolean flag located at beginning without value should be true', async T => {
   let Input = ['--enable-feature', '--parameter', 'value']
@@ -8,7 +8,7 @@ test('boolean flag located at beginning without value should be true', async T =
     Parameter: 'value'
   }
 
-  T.deepEqual(await PostProcessing(Input), { Options: Expected, Positional: []})
+  T.deepEqual(await ParseArgumentsAndOptions(Input), { Options: Expected, Positional: []})
 })
 
 test('boolean flag located at end without value should be true', async T => {
@@ -18,7 +18,7 @@ test('boolean flag located at end without value should be true', async T => {
     EnableFeature: true
   }
 
-  T.deepEqual(await PostProcessing(Input), { Options: Expected, Positional: []})
+  T.deepEqual(await ParseArgumentsAndOptions(Input), { Options: Expected, Positional: []})
 })
 
 test('boolean flag located in middle without value should be true', async T => {
@@ -29,5 +29,5 @@ test('boolean flag located in middle without value should be true', async T => {
     Parameter2: 'value2'
   }
 
-  T.deepEqual(await PostProcessing(Input), { Options: Expected, Positional: []})
+  T.deepEqual(await ParseArgumentsAndOptions(Input), { Options: Expected, Positional: []})
 })
