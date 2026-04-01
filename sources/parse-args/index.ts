@@ -12,6 +12,11 @@ import type { JSONValue, IParsingOptions } from '../types.js'
 export async function ParseArgumentsAndOptions<I extends JSONValue>(Args: string[], FuncOptions: IParsingOptions = {
   NamingConvention: ESToolkit.pascalCase
 }): Promise<{ Options: I, Positional: string[] }> {
+  const ResolvedFuncOptions: Required<IParsingOptions> = {
+    NamingConvention: FuncOptions.NamingConvention ?? ESToolkit.pascalCase,
+    ...FuncOptions
+  }
+
   const Options: Record<string, boolean | string> = Object.create(null)
   const Positional: string[] = []
 
@@ -23,9 +28,9 @@ export async function ParseArgumentsAndOptions<I extends JSONValue>(Args: string
 
     if (Args[I].startsWith('--')) {
       if (I + 1 === Args.length || Args[I + 1].startsWith('--')) {
-        Options[await FuncOptions.NamingConvention(Args[I])] = true
+        Options[await ResolvedFuncOptions.NamingConvention(Args[I])] = true
       } else {
-        Options[await FuncOptions.NamingConvention(Args[I])] = Args[I + 1]
+        Options[await ResolvedFuncOptions.NamingConvention(Args[I])] = Args[I + 1]
         I++
       }
     }
