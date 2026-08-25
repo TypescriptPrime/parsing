@@ -102,7 +102,7 @@ const { Options } = await PostProcessing(Tokens)
 
 - `npm run build` — runs: `tsc -p sources/tsconfig.json` to bundle the compiled JS and emit declarations.
 - `npm test` — runs AVA tests.
-- `npm run lint` — runs ESLint checks.
+- `npm run lint` — runs Oxlint checks.
 
 This project is published as an ES module.
 

@@ -17,7 +17,7 @@ export async function ParseArgumentsAndOptions<I extends JSONValue>(Args: string
     ...FuncOptions
   }
 
-  const Options: Record<string, boolean | string> = Object.create(null)
+  const Options: Record<string, boolean | string> = Object.create(null) as Record<string, boolean | string>
   const Positional: string[] = []
 
   for (let I = 0; I < Args.length; I++) {
